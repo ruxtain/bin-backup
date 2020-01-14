@@ -1,0 +1,6 @@
+// These settings override both User and Default settings for the XML syntax
+{
+    "extensions": [
+        "xml", "wxml"
+    ]
+}

@@ -1,0 +1,3 @@
+{
+    "shell_cmd": "csc $file_name && mono ${file_base_name}.exe"
+}

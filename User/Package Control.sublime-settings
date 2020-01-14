@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"debug": true,
+	"in_process_packages":
+	[
+		"Pretty JSON"
+	],
+	"installed_packages":
+	[
+		"Djaneiro",
+		"FileHeader",
+		"LaTeXTools",
+		"Package Control",
+		"Pretty JSON",
+		"Python Breakpoints",
+		"SublimeREPL"
+	]
+}

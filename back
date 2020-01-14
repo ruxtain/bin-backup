@@ -1,0 +1,12 @@
+#! /bin/zsh 
+# this back works for Mac
+# for other platform I might need a new script
+
+cd ~
+cp -rf .oh-my-zsh .zshrc .vimrc .mongorc.js ~/pro/configuration 
+cp -rf .config/mpv/mpv.conf ~/pro/configuration 
+cp -rf Library/Rime ~/pro/configuration 
+cp -rf "Library/Application Support/Sublime Text 3/Packages/User" ~/pro/configuration
+cp -f bin/back ~/pro/configuration
+
+echo "Backup done, now cd to '~/pro/configuration' and push to git"
