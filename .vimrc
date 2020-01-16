@@ -25,6 +25,9 @@ syntax on
 inoremap jk <esc>
 vnoremap jk <esc> 
 
+" 插入一个字符立即返回normal
+nnoremap <Space> i_<Esc>r
+
 " 按下nn快速隐藏、显示行号，强得一比
 noremap nn :set nu! nu?<cr>
 
@@ -115,7 +118,7 @@ function JavaFile()
                 \."// datetime: ".strftime("%Y-%m-%d %H:%M")."\n"
                 \."\n"
                 \."public class ".expand("%:r")." {\n"
-                \."    public static void  main(String[] args) {\n"
+                \."    public static void main(String[] args) {\n"
                 \."         \n"
                 \."    }\n"
                 \."}\n"

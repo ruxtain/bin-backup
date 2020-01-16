@@ -10,30 +10,25 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Hom
 export HADOOP_HOME=/usr/local/hadoop
 
 # java 专用函数
-jc() {
-    javac $1.java
-    java $1
-}
+# Java compile                                                                                                              
+jc() {                                                                                                                      
+    # 获取最新的脚本/如果不想处理最新的咋办，那你自己 javac                                                                                        # Spark
+    new_java="$(ls -l --time-style '+%Y%m%d%H%M%S' *.java | awk '{print $6, $7}' | sort | tail -n 1 | awk '{print $2}')"    export SPARK_HOME=/usr/local/spark
+    # 去除后缀                                                                                                                  
+    base_java="${new_java%.*}"                                                                                              # 作笔记专用, latex
+    echo compiling $new_java "..."                                                                                          alias t=~/bin/t
+    javac $new_java                                                                                                         
+    echo executing $new_java "..."                                                                                          # 禁用brew的自动更新
+    java $base_java                                                                                                         export HOMEBREW_NO_AUTO_UPDATE=true
+}                                                                                                                           
 
-jv() {
-    vi $1.java
-}
+# Java vim editing                                                                                                          # 为了 mycli 的输出效果而配置：
+jv() {                                                                                                                      #export LESS="-XRF"
+    new_java="$(ls -l --time-style '+%Y%m%d%H%M%S' *.java | awk '{print $6, $7}' | sort | tail -n 1 | awk '{print $2}')"    
+    vi $new_java                                                                                                            export ZSH=$HOME/.oh-my-zsh
+}       
 
-# Spark
-export SPARK_HOME=/usr/local/spark
-
-# 作笔记专用, latex
-alias t=~/bin/t
-
-# 禁用brew的自动更新
-export HOMEBREW_NO_AUTO_UPDATE=true
-
-
-# 为了 mycli 的输出效果而配置：
-#export LESS="-XRF"
-
-export ZSH=$HOME/.oh-my-zsh
-# PATH="$PATH":/usr/local/mysql/bin
+                                                                                                                    # PATH="$PATH":/usr/local/mysql/bin
 # PATH="$PATH":/Users/michael/anaconda3/bin
 #
 
