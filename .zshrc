@@ -12,23 +12,23 @@ export HADOOP_HOME=/usr/local/hadoop
 # java 专用函数
 # Java compile                                                                                                              
 jc() {                                                                                                                      
-    # 获取最新的脚本/如果不想处理最新的咋办，那你自己 javac                                                                                        # Spark
-    new_java="$(ls -l --time-style '+%Y%m%d%H%M%S' *.java | awk '{print $6, $7}' | sort | tail -n 1 | awk '{print $2}')"    export SPARK_HOME=/usr/local/spark
+    # 获取最新的脚本/如果不想处理最新的咋办，那你自己 javac                                                                     
+    new_java="$(ls -l --time-style '+%Y%m%d%H%M%S' *.java | awk '{print $6, $7}' | sort | tail -n 1 | awk '{print $2}')"
     # 去除后缀                                                                                                                  
-    base_java="${new_java%.*}"                                                                                              # 作笔记专用, latex
-    echo compiling $new_java "..."                                                                                          alias t=~/bin/t
+    base_java="${new_java%.*}"                                                                                          
+    echo compiling $new_java "..."                                                                                      
     javac $new_java                                                                                                         
-    echo executing $new_java "..."                                                                                          # 禁用brew的自动更新
-    java $base_java                                                                                                         export HOMEBREW_NO_AUTO_UPDATE=true
+    echo executing $new_java "..."                                                                                      
+    java $base_java                                                                                                     
 }                                                                                                                           
 
-# Java vim editing                                                                                                          # 为了 mycli 的输出效果而配置：
-jv() {                                                                                                                      #export LESS="-XRF"
+# Java vim editing                                                                                                      
+jv() {                                                                                                                 
     new_java="$(ls -l --time-style '+%Y%m%d%H%M%S' *.java | awk '{print $6, $7}' | sort | tail -n 1 | awk '{print $2}')"    
-    vi $new_java                                                                                                            export ZSH=$HOME/.oh-my-zsh
+    vi $new_java                                                                                                       
 }       
 
-                                                                                                                    # PATH="$PATH":/usr/local/mysql/bin
+                                                                                                                    
 # PATH="$PATH":/Users/michael/anaconda3/bin
 #
 
