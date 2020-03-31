@@ -7,26 +7,7 @@ export PATH="$PATH":/Users/michael/anaconda3/bin:/usr/local/bin:/usr/sbin:/sbin:
 
 # 为了学习hive 安装 hadoop0.20.2 完全参考hive编程指南操作
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
-export HADOOP_HOME=/usr/local/hadoop
-
-# java 专用函数
-# Java compile                                                                                                              
-jc() {                                                                                                                      
-    # 获取最新的脚本/如果不想处理最新的咋办，那你自己 javac                                                                     
-    new_java="$(ls -l --time-style '+%Y%m%d%H%M%S' *.java | awk '{print $6, $7}' | sort | tail -n 1 | awk '{print $2}')"
-    # 去除后缀                                                                                                                  
-    base_java="${new_java%.*}"                                                                                          
-    echo compiling $new_java "..."                                                                                      
-    javac $new_java                                                                                                         
-    echo executing $new_java "..."                                                                                      
-    java $base_java                                                                                                     
-}                                                                                                                           
-
-# Java vim editing                                                                                                      
-jv() {                                                                                                                 
-    new_java="$(ls -l --time-style '+%Y%m%d%H%M%S' *.java | awk '{print $6, $7}' | sort | tail -n 1 | awk '{print $2}')"    
-    vi $new_java                                                                                                       
-}       
+export HADOOP_HOME=/usr/local/hadoop     
 
                                                                                                                     
 # PATH="$PATH":/Users/michael/anaconda3/bin
